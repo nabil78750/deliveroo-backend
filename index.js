@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const { log } = require("console");
 
 const app = express();
 app.use(cors());
@@ -414,4 +415,7 @@ app.get("/", (req, res) => {
       { name: "Couverts", meals: [] },
     ],
   });
+});
+app.listen(process.env.PORT || 3200, () => {
+  console.log("Server started");
 });
